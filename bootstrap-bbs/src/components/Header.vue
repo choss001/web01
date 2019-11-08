@@ -7,9 +7,13 @@
 
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
-          <b-nav-item href="#">공지사항</b-nav-item>
+          <b-nav-item to="/popular">인기 검색어
+          </b-nav-item>
           <b-nav-item to="/board/free">자유게시판</b-nav-item>
-          <b-nav-item href="#">구인구직</b-nav-item>
+          <b-nav-item to="/chartjs">VueChartJS</b-nav-item>
+          <b-nav-item to="/axios">Axios</b-nav-item>
+          <b-nav-item to="/board2">board2</b-nav-item>
+
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>

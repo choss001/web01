@@ -36,29 +36,34 @@ export default {
     createComment() {
       const comment_id = data.Comment[data.Comment.length - 1].comment_id + 1;
       data.Comment.push({
-        comment_id: comment_id,
+        comment_id: data.Comment[data.Comment.length -1 ].comment_id +1,
         user_id: 1,
         content_id: this.contentId,
         context: this.context,
         created_at: "2019-04-19 14:11:11",
         updated_at: null
       });
+      console.log("CommentCreate.vue(createComment()) before    isSubComment : " +this.isSubComment);
       this.reloadComments();
-      this.subCommentToggle();
+      console.log("CommentCreate.vue(createComment()) after    isSubComment : " +this.isSubComment);
       this.context = "";
     },
     createSubComment() {
+            console.log("CommentSubComment.vue(createComment()) before    isSubComment : " +this.isSubComment);
+
       const subcomment_id = data.SubComment[data.SubComment.length - 1].subcomment_id + 1;
       data.SubComment.push({
-        subcomment_id: subcomment_id,
+        subcomment_id: data.SubComment[data.SubComment.length -1].subcomment_id +1,
         comment_id: this.commentId,
         user_id: 1,
         context: this.context,
         created_at: "2019-04-19 16:22:11",
         updated_at: null
       });
+      console.log("CommentSubComment.vue(createComment()) before    isSubComment : " +this.isSubComment);
       this.reloadSubComments();
       this.subCommentToggle();
+      console.log("CommentSubComment.vue(createComment()) after    isSubComment : " +this.isSubComment);
       this.context = "";
     }
   }
